@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Qa-site</title>
+    <title>Page1</title>
 	<style type="text/css">
 	.help-button {
 		-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -61,7 +61,21 @@
 	  <script type="text/javascript">
 	  /* LP Mobile JS Configuration */
 	  var _LP_CFG_ = {
-	     app_id : "e4ebf57c"
+	     app_id : "e4ebf57c",
+	     options : {
+	       // All configuration options defined in here
+	       triggerSelector : '.help-button', // Replace with a selector to your help button(s)
+	       onChatDisabled : function(els) { // An event that fires when chat is disabled. It takes one parameter which is an array of your trigger selectors.
+	         for(var i = 0; i < els.length; i++) {
+	           els[i].style.opacity = .5;
+	         }
+	       },
+	       onChatEnabled : function(els) { // An event that fires when chat is enabled. It takes one parameter which is an array of your trigger selectors.
+	         for(var i = 0; i < els.length; i++) {
+	           els[i].style.opacity = 1;
+	         }
+	       }
+	     }
 	   };
 	  /* End of Configuration */
  
@@ -92,11 +106,7 @@
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<a class="page_link" href="./page1.html">PAGE1</a><br>
-<a class="page_link" href="./page2.html">PAGE2</a><br>
-<a class="page_link" href="./page3.html">PAGE3</a><br>
-
+			  <a href="#" class="help-button">Chat Now!</a>
 
 <pre><code>$ cd your_repo_root/repo_name
 $ git fetch origin
