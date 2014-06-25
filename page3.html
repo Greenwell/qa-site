@@ -126,7 +126,11 @@ $ git checkout gh-pages
 	  /* LP Mobile JS Configuration */
 	  var _LP_CFG_ = {
 	     app_id : "e4ebf57c",
-	     options : {
+		 extras : function() { // A static dictionary or a function that returns a dictionary of custom variables 
+         	var extras = {'page': 'page3'};
+			 return extras;
+		 },
+		 options : {
 	       // All configuration options defined in here
 	       skill : 'sales', // Replace with registered mobile skill		   
 	       triggerSelector : '.help-button', // Replace with a selector to your help button(s)

@@ -129,7 +129,11 @@ $ git checkout gh-pages
   	  var _LP_CFG_ = {
   	     app_id : "e4ebf57c",
   	     options : {
-  	       chatDisabled : true 
+  	       chatDisabled : true,
+	       extras : function() { // A static dictionary or a function that returns a dictionary of custom variables 
+	         var extras = {'page': 'index'};
+	         return extras;
+	       }		   
   	     }
   	   };
   	  /* End of Configuration */

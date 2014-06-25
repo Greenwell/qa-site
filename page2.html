@@ -173,6 +173,10 @@ $ git checkout gh-pages
   	     app_id : "e4ebf57c",
   	     options : {
   	       // All configuration options defined in here
+	       extras : function() { // A static dictionary or a function that returns a dictionary of custom variables 
+	         var extras = {'page': 'page2'};
+	         return extras;
+	       },
   		   onChatNotAnswered : function(messages) { // An event that fires after a message is sent by the user but agents are no longer available. It takes one parameter which is an array of the messages attempted to be sent by the user.
   			   alert('All chat agents are currently helping other customers. Please call our customer service center at 800-555-5555');
   		   },
