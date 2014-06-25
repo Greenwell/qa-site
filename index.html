@@ -11,15 +11,72 @@
 
     <title>Qa-site</title>
 	<style type="text/css">
+	.help-button {
+		-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+		-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+		box-shadow:inset 0px 1px 0px 0px #ffffff;
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+		background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+		background-color:#ededed;
+		-webkit-border-top-left-radius:6px;
+		-moz-border-radius-topleft:6px;
+		border-top-left-radius:6px;
+		-webkit-border-top-right-radius:6px;
+		-moz-border-radius-topright:6px;
+		border-top-right-radius:6px;
+		-webkit-border-bottom-right-radius:6px;
+		-moz-border-radius-bottomright:6px;
+		border-bottom-right-radius:6px;
+		-webkit-border-bottom-left-radius:6px;
+		-moz-border-radius-bottomleft:6px;
+		border-bottom-left-radius:6px;
+		text-indent:0;
+		border:1px solid #dcdcdc;
+		display:inline-block;
+		color:#777777;
+		font-family:arial;
+		font-size:15px;
+		font-weight:bold;
+		font-style:normal;
+		height:50px;
+		line-height:50px;
+		width:100px;
+		text-decoration:none;
+		text-align:center;
+		text-shadow:1px 1px 0px #ffffff;
+	}
+	.help-button:hover {
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+		background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+		background-color:#dfdfdf;
+	}.help-button:active {
+		position:relative;
+		top:1px;
+	}</style>
   </head>
-
   <body>
 
 	  <script type="text/javascript">
 	  /* LP Mobile JS Configuration */
 	  var _LP_CFG_ = {
-		  app_id : "e4ebf57c"
-	  };
+	     app_id : "e4ebf57c",
+	     options : {
+	       // All configuration options defined in here
+	       triggerSelector : '.help-button', // Replace with a selector to your help button(s)
+	       onChatDisabled : function(els) { // An event that fires when chat is disabled. It takes one parameter which is an array of your trigger selectors.
+	         for(var i = 0; i < els.length; i++) {
+	           els[i].style.opacity = .5;
+	         }
+	       },
+	       onChatEnabled : function(els) { // An event that fires when chat is enabled. It takes one parameter which is an array of your trigger selectors.
+	         for(var i = 0; i < els.length; i++) {
+	           els[i].style.opacity = 1;
+	         }
+	       }
+	     }
+	   };
 	  /* End of Configuration */
  
 	  /* LP Mobile JS include */
@@ -49,6 +106,7 @@
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+			  <a href="#" class="help-button">Chat Now!</a>
 
 <pre><code>$ cd your_repo_root/repo_name
 $ git fetch origin
@@ -56,7 +114,6 @@ $ git checkout gh-pages
 </code></pre>
 
 <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-<a href="#" class="help-button">Chat Now!</a>
 
 <h3>
 <a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
