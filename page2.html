@@ -54,7 +54,52 @@
 	}.help-button:active {
 		position:relative;
 		top:1px;
-	}</style>
+	}
+	.other-button {
+		-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+		-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+		box-shadow:inset 0px 1px 0px 0px #ffffff;
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+		background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+		background-color:#ededed;
+		-webkit-border-top-left-radius:6px;
+		-moz-border-radius-topleft:6px;
+		border-top-left-radius:6px;
+		-webkit-border-top-right-radius:6px;
+		-moz-border-radius-topright:6px;
+		border-top-right-radius:6px;
+		-webkit-border-bottom-right-radius:6px;
+		-moz-border-radius-bottomright:6px;
+		border-bottom-right-radius:6px;
+		-webkit-border-bottom-left-radius:6px;
+		-moz-border-radius-bottomleft:6px;
+		border-bottom-left-radius:6px;
+		text-indent:0;
+		border:1px solid #dcdcdc;
+		display:inline-block;
+		color:#777777;
+		font-family:arial;
+		font-size:15px;
+		font-weight:bold;
+		font-style:normal;
+		height:50px;
+		line-height:50px;
+		width:100px;
+		text-decoration:none;
+		text-align:center;
+		text-shadow:1px 1px 0px #ffffff;
+	}
+	.other-button:hover {
+		background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+		background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+		background-color:#dfdfdf;
+	}.other-button:active {
+		position:relative;
+		top:1px;
+	}	
+	</style>
   </head>
   <body>
 
@@ -64,6 +109,9 @@
 	     app_id : "e4ebf57c",
 	     options : {
 	       // All configuration options defined in here
+		   onChatNotAnswered : function(messages) { // An event that fires after a message is sent by the user but agents are no longer available. It takes one parameter which is an array of the messages attempted to be sent by the user.
+			   alert('All chat agents are currently helping other customers. Please call our customer service center at 800-555-5555');
+		   },
 		   skill : 'mobile', // Replace with registered mobile skill		  
 	       triggerSelector : '.help-button', // Replace with a selector to your help button(s)
 	       onChatDisabled : function(els) { // An event that fires when chat is disabled. It takes one parameter which is an array of your trigger selectors.
@@ -108,6 +156,8 @@
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 			  <a href="#" class="help-button">Chat Now!</a>
+			  <button class="other-button" onclick="LPMobile.setSkill('sales')">Set sales skill</button>
+			  
 
 <pre><code>$ cd your_repo_root/repo_name
 $ git fetch origin
