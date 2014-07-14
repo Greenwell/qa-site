@@ -103,6 +103,10 @@
   </head>
 
   <body>
+	  <script type="text/javascript">
+	  window.lpTag=window.lpTag||{};if(typeof window.lpTag._tagCount==='undefined'){window.lpTag={site:'88310755',section:lpTag.section||'',autoStart:lpTag.autoStart===false?false:true,ovr:lpTag.ovr||{},_v:'1.5.1',_tagCount:1,protocol:location.protocol,events:{bind:function(app,ev,fn){lpTag.defer(function(){lpTag.events.bind(app,ev,fn)},0)},trigger:function(app,ev,json){lpTag.defer(function(){lpTag.events.trigger(app,ev,json)},1)}},defer:function(fn,fnType){if(fnType==0){this._defB=this._defB||[];this._defB.push(fn)}else if(fnType==1){this._defT=this._defT||[];this._defT.push(fn)}else{this._defL=this._defL||[];this._defL.push(fn)}},load:function(src,chr,id){var t=this;setTimeout(function(){t._load(src,chr,id)},0)},_load:function(src,chr,id){var url=src;if(!src){url=this.protocol+'//'+((this.ovr&&this.ovr.domain)?this.ovr.domain:'lptag.liveperson.net')+'/tag/tag.js?site='+this.site}var s=document.createElement('script');s.setAttribute('charset',chr?chr:'UTF-8');if(id){s.setAttribute('id',id)}s.setAttribute('src',url);document.getElementsByTagName('head').item(0).appendChild(s)},init:function(){this._timing=this._timing||{};this._timing.start=(new Date()).getTime();var that=this;if(window.attachEvent){window.attachEvent('onload',function(){that._domReady('domReady')})}else{window.addEventListener('DOMContentLoaded',function(){that._domReady('contReady')},false);window.addEventListener('load',function(){that._domReady('domReady')},false)}if(typeof(window._lptStop)=='undefined'){this.load()}},start:function(){this.autoStart=true},_domReady:function(n){if(!this.isDom){this.isDom=true;this.events.trigger('LPT','DOM_READY',{t:n})}this._timing[n]=(new Date()).getTime()},vars:lpTag.vars||[],dbs:lpTag.dbs||[],ctn:lpTag.ctn||[],sdes:lpTag.sdes||[],ev:lpTag.ev||[]};lpTag.init()}else{window.lpTag._tagCount+=1}
+	  </script>
+	  
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
@@ -167,41 +171,5 @@ $ git checkout gh-pages
     </div>
 
     
-  	  <script type="text/javascript">
-  	  /* LP Mobile JS Configuration */
-  	  var _LP_CFG_ = {
-  	     app_id : "88310755",
-  	     options : {
-  	       // All configuration options defined in here
-	       extras : function() { // A static dictionary or a function that returns a dictionary of custom variables 
-	         var extras = {'page': 'page2'};
-	         return extras;
-	       },
-  		   onChatNotAnswered : function(messages) { // An event that fires after a message is sent by the user but agents are no longer available. It takes one parameter which is an array of the messages attempted to be sent by the user.
-  			   alert('All chat agents are currently helping other customers. Please call our customer service center at 800-555-5555');
-  		   },
-  		   skill : 'mobile', // Replace with registered mobile skill		  
-  	       triggerSelector : '.help-button', // Replace with a selector to your help button(s)
-  	       onChatDisabled : function(els) { // An event that fires when chat is disabled. It takes one parameter which is an array of your trigger selectors.
-  	         for(var i = 0; i < els.length; i++) {
-  	           els[i].style.opacity = .5;
-  	         }
-  	       },
-  	       onChatEnabled : function(els) { // An event that fires when chat is enabled. It takes one parameter which is an array of your trigger selectors.
-  	         for(var i = 0; i < els.length; i++) {
-  	           els[i].style.opacity = 1;
-  	         }
-  	       }
-  	     }
-  	   };
-  	  /* End of Configuration */
- 
-  	  /* LP Mobile JS include */
-	  (function(){var a=_LP_CFG_.lpjsid="lpjs-"+(new Date).getTime(),b=document.createElement("script"),s=document.getElementsByTagName("script")[0];b.id=a;b.type="text/javascript";b.async=true;b.src="https://d3tpuxked45kzt.cloudfront.net/lp_lib/liveperson-mobile.js";s.parentNode.insertBefore(b,s)})();
-    /* End of Include */
-  	</script>
-
-	
-
   </body>
 </html>
